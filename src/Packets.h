@@ -3,13 +3,14 @@
 */
 
 #include <iostream>
-#include <asio.hpp>
+#include <boost/asio.hpp>
+//#include <asio.hpp>
 #pragma once
 
-typedef std::shared_ptr<asio::ip::tcp::socket> socket_ptr;
-typedef asio::io_service n_io_service; //net input\output service
-typedef asio::ip::tcp tcp;
-typedef asio::ip::udp udp;
+typedef std::shared_ptr<boost::asio::ip::tcp::socket> socket_ptr;
+typedef boost::asio::io_service n_io_service; //net input\output service
+typedef boost::asio::ip::tcp tcp;
+typedef boost::asio::ip::udp udp;
 
 struct TimePacket
 {

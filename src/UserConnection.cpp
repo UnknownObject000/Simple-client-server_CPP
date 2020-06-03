@@ -24,7 +24,7 @@ void UserConnection::Handler()
         TimePacket *t_packet = new TimePacket;
         try
         {
-            len = client_socket->read_some(asio::buffer(t_packet, sizeof(TimePacket)));
+            len = client_socket->read_some(boost::asio::buffer(t_packet, sizeof(TimePacket)));
         }
         catch (const std::exception &e)
         {
@@ -56,8 +56,8 @@ void UserConnection::Send(std::string message)
 {
     try
     {
-        write(*client_socket, asio::buffer(message, message.size()));
-        write(*client_socket, asio::buffer("\n", 1));
+        write(*client_socket, boost::asio::buffer(message, message.size()));
+        write(*client_socket, boost::asio::buffer("\n", 1));
     }
     catch (const std::exception &e)
     {

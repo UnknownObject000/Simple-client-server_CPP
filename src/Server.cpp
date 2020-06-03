@@ -19,7 +19,7 @@ int Server::Listen()
     n_io_service service; //boost io-service
 
     //tcp listener config
-    tcp::endpoint listenEP(asio::ip::tcp::v4(), 25565);
+    tcp::endpoint listenEP(boost::asio::ip::tcp::v4(), 25565);
     tcp::acceptor listener(service, listenEP);
 
     std::cout << "<Server started>\n";
